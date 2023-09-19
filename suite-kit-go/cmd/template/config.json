@@ -1,0 +1,365 @@
+{
+    "allowWorkerOnMaster": false,
+    "masterNodes": [],
+    "workerNodes": [],
+    "licenseAgreement": {
+        "eula": true,
+        "callHome": false
+    },
+    "connection": {
+        "externalHostname": "",
+        "port": "443"
+    },
+    "volumes": [{
+            "type": "NFS",
+            "name": "itom-vol-claim",
+            "host": "",
+            "path": "/var/vols/itom/core"
+        },
+        {
+            "type": "NFS",
+            "name": "global-volume",
+            "host": "",
+            "path": "/var/vols/itom/itsma/global-volume"
+        },
+        {
+            "type": "NFS",
+            "name": "db-volume",
+            "host": "",
+            "path": "/var/vols/itom/itsma/db-volume"
+        },
+        {
+            "type": "NFS",
+            "name": "db-volume-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/db-volume-1"
+        },
+        {
+            "type": "NFS",
+            "name": "db-volume-2",
+            "host": "",
+            "path": "/var/vols/itom/itsma/db-volume-2"
+        },
+
+        {
+            "type": "NFS",
+            "name": "smartanalytics-volume",
+            "host": "",
+            "path": "/var/vols/itom/itsma/smartanalytics-volume"
+        },
+        {
+            "type": "NFS",
+            "name": "db-single-vol",
+            "host": "",
+            "path": "/var/vols/itom/itsma/db-single-vol"
+        },
+        {
+            "type": "NFS",
+            "name": "db-backup-vol",
+            "host": "",
+            "path": "/var/vols/itom/itsma/db-backup-vol"
+        },
+        {
+            "type": "NFS",
+            "name": "rabbitmq-infra-rabbitmq-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/rabbitmq-infra-rabbitmq-0"
+        },
+        {
+            "type": "NFS",
+            "name": "rabbitmq-infra-rabbitmq-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/rabbitmq-infra-rabbitmq-1"
+        },
+        {
+            "type": "NFS",
+            "name": "rabbitmq-infra-rabbitmq-2",
+            "host": "",
+            "path": "/var/vols/itom/itsma/rabbitmq-infra-rabbitmq-2"
+        },
+        {
+            "type": "NFS",
+            "name": "itom-logging-vol",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itom-logging-vol"
+        },
+        {
+            "type": "NFS",
+            "name": "itom-monitor-vol",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itom-monitor-vol"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-dah-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-dah-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-dah-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-dah-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-dah-2",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-dah-2"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-2",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-2"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-3",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-3"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-4",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-4"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-5",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-5"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-a-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-a-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-a-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-a-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-a-2",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-a-2"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-a-3",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-a-3"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-a-4",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-a-4"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-saw-con-a-5",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-saw-con-a-5"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawarc-dah-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawarc-dah-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawarc-con-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawarc-con-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawarc-con-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawarc-con-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawarc-con-a-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawarc-con-a-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawarc-con-a-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawarc-con-a-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawmeta-dah-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawmeta-dah-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawmeta-con-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawmeta-con-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawmeta-con-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawmeta-con-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawmeta-con-a-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawmeta-con-a-0"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-sawmeta-con-a-1",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-sawmeta-con-a-1"
+        },
+        {
+            "type": "NFS",
+            "name": "itsma-smarta-stx-dah-0",
+            "host": "",
+            "path": "/var/vols/itom/itsma/itsma-smarta-stx-dah-0"
+        }
+    ],
+
+    "database": {
+        "type": "extpostgres",
+        "param": {
+            "dbHost": "",
+            "dbPort": "5432",
+            "dbName": "cdfidmdb",
+            "dbUser": "cdfidm",
+            "dbPassword": "postgres_pass@FIPS",
+            "dbAutoCreate": false
+        }
+    },
+
+    "capabilities": {
+        "version": "",
+        "suite": "itsma",
+        "installSize": "SMALL",
+        "edition": "EXPRESS",
+        "capabilitySelection": [],
+        "configuration": [{
+            "itom_suite_size": "small",
+            "itom_suite_install_type": "new_install",
+            "itom_suite_mode": "X_MODE",
+            "activated_services": [],
+            "itom_suite_autoscaling": false,
+            "dbowner_password": "postgres_12&FIPS",
+            "integrationadmin_password": "Admin_5678",
+            "internal_dbaowner_password": "postgres_12&FIPS",
+            "locale": "zh",
+            "database": [{
+                    "product_name": "xruntime",
+                    "internal": false,
+                    "db_engine": "postgres",
+                    "db_server": "",
+                    "db_port": "5432",
+                    "db_inst": "",
+                    "db_login": "postgres",
+                    "db_password": "",
+                    "db_ssl": true,
+                    "db_pg_ssl_mode": "verify-full",
+                    "db_ssl_cert_path": "/app/dbssl/ssl01/root.crt",
+                    "db_ssl_cert_content": ""
+                },
+                {
+                    "product_name": "bo",
+                    "internal": false,
+                    "db_engine": "postgres",
+                    "db_server": "",
+                    "db_port": "5432",
+                    "db_inst": "",
+                    "db_login": "postgres",
+                    "db_password": "",
+                    "db_ssl": true,
+                    "db_pg_ssl_mode": "verify-full",
+                    "db_ssl_cert_path": "/app/dbssl/ssl01/root.crt",
+                    "db_ssl_cert_content": ""
+                },
+                {
+                    "product_name": "smarta",
+                    "internal": false,
+                    "db_engine": "postgres",
+                    "db_server": "",
+                    "db_port": "5432",
+                    "db_inst": "",
+                    "db_login": "postgres",
+                    "db_password": "",
+                    "db_ssl": true,
+                    "db_pg_ssl_mode": "verify-full",
+                    "db_ssl_cert_path": "/app/dbssl/ssl01/root.crt",
+                    "db_ssl_cert_content": ""
+                },
+                {
+                    "product_name": "idm",
+                    "internal": false,
+                    "db_engine": "postgres",
+                    "db_server": "",
+                    "db_port": "5432",
+                    "db_inst": "",
+                    "db_login": "postgres",
+                    "db_password": "",
+                    "db_ssl": true,
+                    "db_pg_ssl_mode": "verify-full",
+                    "db_ssl_cert_path": "/app/dbssl/ssl01/root.crt",
+                    "db_ssl_cert_content": ""
+                },
+                {
+                    "product_name": "autopass",
+                    "internal": false,
+                    "db_engine": "postgres",
+                    "db_server": "",
+                    "db_port": "5432",
+                    "db_inst": "",
+                    "db_login": "postgres",
+                    "db_password": "",
+                    "db_ssl": true,
+                    "db_pg_ssl_mode": "verify-full",
+                    "db_ssl_cert_path": "/app/dbssl/ssl01/root.crt",
+                    "db_ssl_cert_content": ""
+                }
+            ],
+            "vertica_database": [{
+                "product_name": "vertica",
+                "db_engine": "vertica",
+                "db_server": "shc-hvm00557.swinfra.net",
+                "db_port": "5433",
+                "db_inst": "cgrodb",
+                "db_login": "cgrodba",
+                "db_password": "Cloud_123",
+                "db_ssl": true,
+                "db_ssl_cert_path": "/app/dbssl/ssl01/rootca.pem",
+                "db_ssl_cert_content": ""
+            }],
+            "sysadmin_password": "Admin_1234",
+            "boadmin_password": "Admin_1234"
+        }]
+    }
+}

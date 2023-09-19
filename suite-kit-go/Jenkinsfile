@@ -1,0 +1,61 @@
+timestamps {
+    properties([
+            buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '50')),
+    ])
+    podTemplate(
+        containers: [
+                containerTemplate(
+                        name: "builder",
+                        image: "redhat/ubi8",
+                        command: 'sleep',
+                        args: '99d',
+                        resourceRequestCpu: '10m',
+                        resourceLimitCpu: '1',
+                        resourceRequestMemory: '500Mi',
+                        resourceLimitMemory: '500Mi',
+                        alwaysPullImage: true
+                )
+        ],
+    )
+    {
+        node(POD_LABEL) {
+            
+            container("builder") {
+
+                stage("Install depedencies and checkout codes"){
+                    sh '''
+                        yum install -y openssh-clients git
+                    '''
+                    gt.checkout(org: 'SMA-RnD', repo: 'suite-kit-go', branch: 'main')  
+                }
+
+                dir("suite-kit-go"){
+                    stage("Build RPM"){
+                        sh '''
+                            sh Build.sh
+                        '''
+                        currentBuild.description = sh(returnStdout: true, script: """ grep -Eo 'version\\s*=\\s*"[^"]+"' main.go | grep -Eo '"[^"]+"' | tr -d '"' """).trim()
+                        rpmPkg = sh(returnStdout: true, script: ''' ls *.rpm ''').trim()
+                    }
+                    
+                    stage("Upload RPM pkg") {
+                        withCredentials([usernamePassword(credentialsId: 'artifactory', passwordVariable: 'artifactory_password', usernameVariable: 'artifactory_username')]) {
+                            script {
+                                sh """ 
+                                curl -u ${artifactory_username}:${artifactory_password} --upload-file ${rpmPkg} https://orgartifactory.swinfra.net/artifactory/itom-buildoutput/suite-kit/rpm/${rpmPkg} -k 
+                                curl -u ${artifactory_username}:${artifactory_password} -k -X PUT https://orgartifactory.swinfra.net/artifactory/api/storage/itom-buildoutput-local/suite-kit/rpm?properties=latest=${rpmPkg}
+                                """
+                            }
+                        }
+                    }
+
+                    stage("Make github release"){
+                        def gt = new mf.devops.Github()
+                        gt.makeRelease(currentBuild.description, "main", "suite-kit-"+currentBuild.description , "https://orgartifactory.swinfra.net/artifactory/itom-buildoutput/suite-kit/rpm/"+rpmPkg , false, false, "https://github.houston.softwaregrp.net", "SMA-RnD", "suite-kit-go")
+                    }
+                    
+                }
+            }
+        }
+    }
+}
